@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Entities.Products;
 namespace Domain.Entities.Orders
 {
     public class OrderItem : BaseEntity<int>
