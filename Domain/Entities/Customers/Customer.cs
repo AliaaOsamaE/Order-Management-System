@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Entities.Orders;
 
 namespace Domain.Entities.Customers
 {

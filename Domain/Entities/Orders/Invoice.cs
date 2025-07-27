@@ -8,6 +8,6 @@ namespace Domain.Entities.Orders
         public virtual Order? Order { get; set; }
 
         public DateTime InvoiceDate { get; set; } = DateTime.Now;
-        public decimal TotalAmount { get; set; };
+        public decimal TotalAmount { get; set; }
     }
 }
