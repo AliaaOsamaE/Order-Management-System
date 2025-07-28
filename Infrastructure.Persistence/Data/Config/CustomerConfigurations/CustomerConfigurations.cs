@@ -1,9 +1,9 @@
 ﻿using Domain.Entities.Customers;
-using LinkDev.Talabat.Infrastructure.Persistence.Data.Config.Base;
+using Infrastructure.Persistence.Data.Config.BaseConfigurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LinkDev.Talabat.Infrastructure.Persistence._Data.Config.Customers
+namespace Infrastructure.Persistence.Data.Config.CustomerConfigurations
 {
     internal class CustomerConfigurations : BaseEntityConfigurations<Customer, int>
     {

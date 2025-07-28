@@ -1,9 +1,9 @@
 ﻿using Domain.Entities.Orders;
-using LinkDev.Talabat.Infrastructure.Persistence.Data.Config.Base;
+using Infrastructure.Persistence.Data.Config.BaseConfigurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LinkDev.Talabat.Infrastructure.Persistence._Data.Config.Orders
+namespace Infrastructure.Persistence.Data.Config.Order
 {
     internal class OrderItemConfigurations : BaseEntityConfigurations<OrderItem, int>
     {

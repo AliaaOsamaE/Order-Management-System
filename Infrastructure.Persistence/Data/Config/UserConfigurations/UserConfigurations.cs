@@ -1,8 +1,8 @@
 ﻿using Domain.Entities.Users;
-using LinkDev.Talabat.Infrastructure.Persistence.Data.Config.Base;
+using Infrastructure.Persistence.Data.Config.BaseConfigurations;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LinkDev.Talabat.Infrastructure.Persistence._Data.Config.Users
+namespace Infrastructure.Persistence.Data.Config.UserConfigurations
 {
     internal class UserConfigurations : BaseEntityConfigurations<User, int>
     {
@@ -17,9 +17,9 @@ namespace LinkDev.Talabat.Infrastructure.Persistence._Data.Config.Users
             builder.HasIndex(u => u.Username)
                    .IsUnique();
 
-            builder.Property(u => u.PasswordHash)
+            builder.Property(u => u.Password)
                    .IsRequired()
-                   .HasMaxLength(256); 
+                   .HasMaxLength(256);
 
             builder.Property(u => u.Role)
                    .HasConversion<int>()

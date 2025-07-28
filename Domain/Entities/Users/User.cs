@@ -11,7 +11,7 @@ namespace Domain.Entities.Users
     public class User : BaseEntity<int>
     {
         public required string Username { get; set; }
-        public required string PasswordHash { get; set; }
+        public required string Password { get; set; }
         public Role Role { get; set; }
     }
 }
