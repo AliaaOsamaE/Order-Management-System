@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
 {
-    internal class GenericRepository<TEntity, TKey>(OrderManagementDbContext _dbContext) : IGenericRepository<TEntity, TKey>
+    public class GenericRepository<TEntity, TKey>(OrderManagementDbContext _dbContext) : IGenericRepository<TEntity, TKey>
         where TEntity : BaseEntity<TKey>
         where TKey : IEquatable<TKey>
     {

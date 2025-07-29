@@ -12,6 +12,7 @@ using Application.Services._User;
 using Application.Services.Email;
 using Infrastructure.Persistence;
 using LinkDev.Talabat.Core.Domain.Contracts.Persistence;
+using LinkDev.Talabat.Infrastructure.Persistence.Repositories;
 using LinkDev.Talabat.Infrastructure.Persistence.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
@@ -37,8 +38,7 @@ namespace Order_Management_System
                 options.UseSqlServer(builder.Configuration.GetConnectionString("OrderManagementContext"));
             });
 
-
-            builder.Services.AddScoped(typeof(IGenericRepository<,>), typeof(IGenericRepository<,>));
+            builder.Services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
             builder.Services.AddAutoMapper(Mapper => Mapper.AddProfile(new MappingProfile()));
             builder.Services.AddScoped<IOrderServices, OrderService>();
             builder.Services.AddScoped<IUserServices, UserServices>();
