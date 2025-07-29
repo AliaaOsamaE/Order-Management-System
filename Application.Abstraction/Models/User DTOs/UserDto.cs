@@ -2,7 +2,7 @@
 
 namespace Application.Abstraction.Models.User
 {
-    public class UserToReturnDto
+    public class UserDto
     {
         public int Id { get; set; }
         public required string Username { get; set; }

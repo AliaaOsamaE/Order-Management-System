@@ -1,7 +1,7 @@
 ﻿using Application.Abstraction.Models.OrderItemsDto;
 using Domain.Entities.Orders;
 
-namespace Application.Abstraction.Models.OrderDto
+namespace Application.Abstraction.Models.OrderDtos
 {
     public class OrderDto
     {

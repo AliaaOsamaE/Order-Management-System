@@ -1,7 +1,7 @@
 ﻿using Domain.Entities.Orders;
 using System.ComponentModel.DataAnnotations;
 
-namespace Application.Abstraction.Models.OrderDto
+namespace Application.Abstraction.Models.OrderDtos
 {
     public class UpdateOrderStatusDto
     {

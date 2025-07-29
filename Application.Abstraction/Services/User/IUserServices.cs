@@ -1,6 +1,10 @@
-﻿namespace Application.Abstraction.Services.User
+﻿using Application.Abstraction.Models.User;
+
+namespace Application.Abstraction.Services.User
 {
-    internal interface IUserServices
+    public interface IUserServices
     {
+        public Task<string> Login(LoginDto loginDto);
+        public Task<UserDto> Register(RegisterDto registerDto);
     }
 }

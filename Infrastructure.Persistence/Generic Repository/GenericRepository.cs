@@ -2,6 +2,7 @@
 using Infrastructure.Persistence;
 using LinkDev.Talabat.Core.Domain.Contracts.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
 {
@@ -20,5 +21,11 @@ namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
         public void Update(TEntity entity) => _dbContext.Set<TEntity>().Update(entity);
         public void Delete(TEntity entity) => _dbContext.Set<TEntity>().Remove(entity);
 
+        public async Task<IEnumerable<TEntity>> GetWhereAsync(Expression<Func<TEntity, bool>> criteria, bool withTracking = false)
+        {
+            return withTracking?
+                await _dbContext.Set<TEntity>().Where(criteria).ToListAsync() :
+                await _dbContext.Set<TEntity>().Where(criteria).AsNoTracking().ToListAsync();
+        }
     }
 }

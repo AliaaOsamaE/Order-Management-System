@@ -3,7 +3,7 @@ using Infrastructure.Persistence.Data.Config.BaseConfigurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.Persistence.Data.Config.Order
+namespace Infrastructure.Persistence.Data.Config.OrderConfigurations
 {
     internal class OrderItemConfigurations : BaseEntityConfigurations<OrderItem, int>
     {
@@ -17,7 +17,7 @@ namespace Infrastructure.Persistence.Data.Config.Order
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(o => o.Order)
-                   .WithMany(o => o.orderItems)
+                   .WithMany(o => o.OrderItems)
                    .HasForeignKey(o => o.OrderId)
                    .OnDelete(DeleteBehavior.Cascade);
 

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Application.Abstraction.Models.OrderDtos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Application.Abstraction.Models._NewFolder
 {

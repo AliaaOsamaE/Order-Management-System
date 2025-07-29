@@ -1,6 +1,13 @@
-﻿namespace Application.Abstraction.Services.Order
+﻿using Application.Abstraction.Models.OrderDtos;
+
+namespace Application.Abstraction.Services._Order
 {
-    internal interface IOrderServices
+    public interface IOrderServices
     {
+        Task<OrderDto> CreateOrderAsync(CreateOrderDto createOrderDto);
+        Task<OrderDto> GetOrderById(int orderId);
+        Task<IEnumerable<OrderDto>> GetAllOrdersAsync();
+        Task<UpdateOrderStatusDto> UpdateOrderStatusAsync(int orderId, UpdateOrderStatusDto updateOrderDto);
+
     }
 }

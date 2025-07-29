@@ -1,7 +1,4 @@
 ﻿using Domain.Common;
-using Domain.Entities.Orders;
-using System.Net;
-
 namespace Domain.Entities.Orders
 {
     public enum OrderStatus
@@ -13,16 +10,17 @@ namespace Domain.Entities.Orders
     public enum PaymentMethod
     {
         CreditCard = 1,
-        Cash = 2
+        PayPal = 2,
+        Cash = 3
     }
     public class Order: BaseEntity<int>
     {
         public int CustomerId { get; set; }
         public DateTime OrderDate { get; set; } = DateTime.Now;
         public decimal TotalAmount { get; set; }
-        public virtual ICollection<OrderItem> orderItems { get; set; } = new HashSet<OrderItem>();
-        public OrderStatus status { get; set; } = OrderStatus.Pending;
-        public PaymentMethod paymentMethod { get; set; } = PaymentMethod.CreditCard;
+        public virtual ICollection<OrderItem> OrderItems { get; set; } = new HashSet<OrderItem>();
+        public OrderStatus Status { get; set; } = OrderStatus.Pending;
+        public PaymentMethod PaymentMethod { get; set; } = PaymentMethod.CreditCard;
     }
 }
 

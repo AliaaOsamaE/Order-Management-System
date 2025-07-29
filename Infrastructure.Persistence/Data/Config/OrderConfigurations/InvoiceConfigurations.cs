@@ -3,7 +3,7 @@ using Infrastructure.Persistence.Data.Config.BaseConfigurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.Persistence.Data.Config.Order
+namespace Infrastructure.Persistence.Data.Config.OrderConfigurations
 {
     internal class InvoiceConfigurations : BaseEntityConfigurations<Invoice, int>
     {

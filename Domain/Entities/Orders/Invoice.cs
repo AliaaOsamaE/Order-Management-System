@@ -6,7 +6,6 @@ namespace Domain.Entities.Orders
     {
         public int OrderId { get; set; } // FK to Order Entity
         public virtual Order? Order { get; set; }
-
         public DateTime InvoiceDate { get; set; } = DateTime.Now;
         public decimal TotalAmount { get; set; }
     }

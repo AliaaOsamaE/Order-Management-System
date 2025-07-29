@@ -2,7 +2,7 @@
 using Domain.Entities.Orders;
 using System.ComponentModel.DataAnnotations;
 
-namespace Application.Abstraction.Models.OrderDto
+namespace Application.Abstraction.Models.OrderDtos
 {
     public class CreateOrderDto
     {
@@ -13,8 +13,8 @@ namespace Application.Abstraction.Models.OrderDto
         public PaymentMethod PaymentMethod { get; set; }
 
         [Required]
-        [MinLength(1)]
         public List<CreateOrderItemDto> OrderItems { get; set; } = new List<CreateOrderItemDto>();
+
     }
 
 }

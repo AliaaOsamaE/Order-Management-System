@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using System.Linq.Expressions;
 
 namespace LinkDev.Talabat.Core.Domain.Contracts.Persistence
 {
@@ -11,5 +12,6 @@ namespace LinkDev.Talabat.Core.Domain.Contracts.Persistence
         Task AddAsync(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
+        Task<IEnumerable<TEntity>> GetWhereAsync(Expression<Func<TEntity, bool>> criteria, bool withTracking = false);
     }
 }

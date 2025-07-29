@@ -2,7 +2,7 @@
 
 namespace Application.Abstraction.Models.Product
 {
-    public class ProductToReturnDto
+    public class ProductDto
     {
         public int Id { get; set; }
         public required string Name { get; set; }

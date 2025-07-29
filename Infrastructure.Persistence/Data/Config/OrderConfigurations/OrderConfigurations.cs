@@ -2,8 +2,7 @@
 using Infrastructure.Persistence.Data.Config.BaseConfigurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace Infrastructure.Persistence.Data.Config.Order
+namespace Infrastructure.Persistence.Data.Config.OrderConfigurations
 {
     internal class OrderConfigurations : BaseEntityConfigurations<Order, int>
     {
@@ -21,27 +20,27 @@ namespace Infrastructure.Persistence.Data.Config.Order
                  .IsRequired();
 
 
-            builder.Property(order => order.status)
+            builder.Property(order => order.Status)
                 .HasConversion
                 (
                 (OStatus) => OStatus.ToString(),
                 (OStatus) => (OrderStatus)Enum.Parse(typeof(OrderStatus), OStatus)
                 );
 
-            builder.HasMany(order => order.orderItems)
+            builder.HasMany(order => order.OrderItems)
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Property(o => o.status)
+            builder.Property(o => o.Status)
                    .HasConversion<int>()
                    .IsRequired();
 
-            builder.Property(o => o.paymentMethod)
+            builder.Property(o => o.PaymentMethod)
                    .HasConversion<int>()
                    .IsRequired();
 
-            builder.HasMany(o => o.orderItems)
-                   .WithOne(o => o.Order)
+            builder.HasMany(o => o.OrderItems)
+                   .WithOne(o=> o.Order)
                    .HasForeignKey(o => o.OrderId)
                    .OnDelete(DeleteBehavior.Cascade);
         }
